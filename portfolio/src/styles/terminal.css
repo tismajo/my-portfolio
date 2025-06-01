@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  background-color: #0d0d0d;
+  color: #33ff33;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+.terminal-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #000;
+  border: 1px solid #33ff33;
+  border-radius: 8px;
+  min-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px #33ff33;
+}
+
+.prompt-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt-symbol {
+  margin-right: 0.5rem;
+}
+
+.prompt-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #33ff33;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: #33ff33;
+}
+
+.output-line {
+  margin: 0.5rem 0;
+}
+
+.output-command {
+  font-weight: bold;
+}
+
+.output-result a {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li::before {
+  content: "• ";
+  color: #33ff33;
+}
+
+@media screen and (max-width: 600px) {
+  .terminal-container {
+    margin: 1rem;
+    font-size: 0.9rem;
+  }
+}
