@@ -79,25 +79,28 @@ const handleCommand = (input) => {
     </div>
   );
   } else if (parts[1] === 'projects') {
-    result = (
-      <div>
-        <p><strong>Proyectos:</strong></p>
-        {Projects.map((project, idx) => (
-          <div key={idx} style={{ marginBottom: '1rem' }}>
-            <p><strong>[{idx + 1}] {project.title}</strong></p>
-            <p>{project.description}</p>
-            <p><strong>Tecnologías:</strong> {project.technologies.join(', ')}</p>
-            <p>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                {project.link}
-              </a>
-            </p>
-          </div>
-        ))}
-      </div>
-    );
-  }
-  else {
+    const index = parseInt(parts[2]);
+
+    if (!parts[2]) {
+      result = `Falta el número de proyecto. Usa "majo projects 1", "majo projects 2", etc.`;
+    } else if (isNaN(index) || index < 1 || index > Projects.length) {
+      result = `Proyecto inválido. Solo hay ${Projects.length} proyectos disponibles.`;
+    } else {
+      const project = Projects[index - 1];
+      result = (
+        <div>
+          <p><strong>[{index}] {project.title}</strong></p>
+          <p>{project.description}</p>
+          <p><strong>Tecnologías:</strong> {project.technologies.join(', ')}</p>
+          <p>
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              {project.link}
+            </a>
+          </p>
+        </div>
+      );
+    }
+  } else {
     result = `Comando no reconocido: "${input}". Usa "majo help" para ver comandos.`;
   }
 
