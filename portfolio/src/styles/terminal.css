@@ -78,6 +78,31 @@ li::before {
   color: #33ff33;
 }
 
+.footer {
+  background-color: #000;
+  text-align: center;
+  color: #33ff33;
+  padding: 1rem;
+  border-top: 1px solid #33ff33;
+  margin-top: 2rem;
+  font-family: Courier New, monospace;
+}
+
+.footer a {
+  color: #33ff33;
+  font-weight: bold;
+}
+
+.matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d;
+}
+
 @media screen and (max-width: 600px) {
   .terminal-container {
     margin: 1rem;
