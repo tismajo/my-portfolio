@@ -75,7 +75,9 @@ const handleCommand = (input) => {
   } else if (parts[1] === 'resume') {
   result = (
     <div>
-      <p>Descargando archivo: <a href="../../public/mariajosegironCV.pdf" download target="_blank" rel="noopener noreferrer">mariajosegironCV.pdf</a></p>
+      <a href="/mariajosegironCV.pdf" download target="_blank" rel="noopener noreferrer">
+        mariajosegironCV.pdf
+      </a>
     </div>
   );
   } else if (parts[1] === 'projects') {
